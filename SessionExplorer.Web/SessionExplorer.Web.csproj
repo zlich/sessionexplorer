@@ -1,0 +1,141 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{329BDEB8-A4ED-478B-8E7C-66471C8FAAA9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SessionExplorer.Web</RootNamespace>
+    <AssemblyName>SessionExplorer.Web</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DateLinks.ascx" />
+    <Content Include="Controls\ObjectList.ascx" />
+    <Content Include="Controls\ObjectVisualiser.ascx" />
+    <Content Include="Controls\PageLinks.ascx" />
+    <Content Include="Controls\SessionReport.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\first-active.png" />
+    <Content Include="Images\first-inactive.png" />
+    <Content Include="Images\last-active.png" />
+    <Content Include="Images\last-inactive.png" />
+    <Content Include="Images\next-active.png" />
+    <Content Include="Images\next-inactive.png" />
+    <Content Include="Images\previous-active.png" />
+    <Content Include="Images\previous-inactive.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\DateLinks.ascx.cs">
+      <DependentUpon>DateLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DateLinks.ascx.designer.cs">
+      <DependentUpon>DateLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectList.ascx.cs">
+      <DependentUpon>ObjectList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ObjectList.ascx.designer.cs">
+      <DependentUpon>ObjectList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectVisualiser.ascx.cs">
+      <DependentUpon>ObjectVisualiser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ObjectVisualiser.ascx.designer.cs">
+      <DependentUpon>ObjectVisualiser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageLinks.ascx.cs">
+      <DependentUpon>PageLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PageLinks.ascx.designer.cs">
+      <DependentUpon>PageLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SessionReport.ascx.cs">
+      <DependentUpon>SessionReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SessionReport.ascx.designer.cs">
+      <DependentUpon>SessionReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SessionExplorer.Entities\SessionExplorer.Entities.csproj">
+      <Project>{1E9322BE-B1B9-4121-B08A-84384E75D161}</Project>
+      <Name>SessionExplorer.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SessionExplorer.Utilities\SessionExplorer.Utilities.csproj">
+      <Project>{9FDC4E1E-C36C-4824-B224-0204BA32E531}</Project>
+      <Name>SessionExplorer.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4632</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
