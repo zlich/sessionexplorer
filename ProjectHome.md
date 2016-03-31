@@ -1,0 +1,3 @@
+Implemented as a simple asp.net website, the session explorer allows site administrators to view deserialised session objects associated with their website users.
+
+Asp.Net includes the facility to store user sessions in a SQL server database, but administrators have to deserialise the session objects if they need to view the contents of the session. This simple, handy app takes the grunt-work out of browsing the session and exposes all of the session objects and their contents in a paged grid view.
